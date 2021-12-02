@@ -15,7 +15,8 @@ namespace AdventofCode2021
 
             Day1.SonarSweepPartTwo();
 
-
+            //Day 2
+            Day2.SubmarineDive();
         }
     }
 }

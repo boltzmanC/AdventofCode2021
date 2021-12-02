@@ -13,7 +13,7 @@ namespace AdventofCode2021
 
         public static void SonarSweep()
         {
-            string file = @"C:\Users\boltz\source\repos\AdventofCode2021\input.txt";
+            string file = @"C:\Users\boltz\source\repos\AdventofCode2021\AdventofCode2021\input_depths.txt";
 
             List<int> numbers = new List<int>();
 
@@ -55,7 +55,7 @@ namespace AdventofCode2021
 
         public static void SonarSweepPartTwo()
         {
-            string file = @"C:\Users\boltz\source\repos\AdventofCode2021\input.txt";
+            string file = @"C:\Users\boltz\source\repos\AdventofCode2021\AdventofCode2021\input_depths.txt";
 
             List<int> numbers = new List<int>();
 
