@@ -11,9 +11,9 @@ namespace AdventofCode2021
         static void Main(string[] args)
         {
             //Day 1
-            Day1.DepthCounter();
+            Day1.SonarSweep();
 
-
+            Day1.SonarSweepPartTwo();
 
 
         }
