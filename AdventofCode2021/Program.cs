@@ -11,12 +11,14 @@ namespace AdventofCode2021
         static void Main(string[] args)
         {
             //Day 1
-            Day1.SonarSweep();
+            //Day1.SonarSweep();
 
-            Day1.SonarSweepPartTwo();
+            //Day1.SonarSweepPartTwo();
 
             //Day 2
-            Day2.SubmarineDive();
+            //.SubmarineDive();
+
+            Day2.SubmarineDivePartTwo();
         }
     }
 }

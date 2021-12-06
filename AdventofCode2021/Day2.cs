@@ -9,7 +9,7 @@ namespace AdventofCode2021
 {
     public class Day2
     {
-        const string file = @"C:\Users\boltz\source\repos\AdventofCode2021\AdventofCode2021\input_commands.txt";
+        const string depthsfile = @"C:\Users\boltz\source\repos\AdventofCode2021\AdventofCode2021\input_commands.txt";
 
         public static void SubmarineDive()
         {
@@ -22,7 +22,7 @@ namespace AdventofCode2021
             string down = "down"; // +y
             string up = "up"; // -y
 
-            using (StreamReader readfile = new StreamReader(file))
+            using (StreamReader readfile = new StreamReader(depthsfile))
             {
                 string line = string.Empty;
 
@@ -76,12 +76,65 @@ namespace AdventofCode2021
 
         public static void SubmarineDivePartTwo()
         {
-            
-            
-            using (StreamReader readfile = new StreamReader(file))
-            {
+            int position = 0;
+            int depth = 0;
+            int aim = 0;
 
+            string forward = "forward"; // +x
+            string down = "down"; // +y
+            string up = "up"; // -y
+
+            using (StreamReader readfile = new StreamReader(depthsfile))
+            {
+                string line = string.Empty;
+
+                while ((line = readfile.ReadLine()) != null)
+                {
+                    string[] splitline = line.Split(' ');
+
+                    string direction = splitline[0].Trim();
+                    string distancestring = splitline[1].Trim();
+
+                    bool isnumber = Int32.TryParse(distancestring, out int newnumber);
+
+                    if (isnumber != true)
+                    {
+                        Console.WriteLine($"is not a number: {distancestring}");
+                        Environment.Exit(0);
+                    }
+
+                    int currentdepth = depth;
+
+                    //directions
+                    if (direction == forward)
+                    {
+                        position += newnumber;
+
+                        depth = currentdepth + (newnumber * aim);
+                    }
+                    else if (direction == down)
+                    {
+                        aim += newnumber;
+                    }
+                    else if (direction == up)
+                    {
+                        aim -= newnumber;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"not a valid direction: {direction}");
+                    }
+
+                }
             }
+
+            //final position
+            int finalposition = position * depth;
+
+            Console.WriteLine();
+            Console.WriteLine("Submarine dive part two:");
+            Console.WriteLine($"final position: {finalposition}");
+            Console.ReadKey();
         }
 
 
